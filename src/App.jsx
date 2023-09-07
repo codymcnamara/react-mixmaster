@@ -7,6 +7,7 @@ import {
   Newsletter,
   Cocktail,
 } from './pages';
+import { loader as landingLoader } from './pages/Landing.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,9 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing/>
-      }, 
+        loader: landingLoader,
+        element: <Landing />,
+      },
       {
         path: '/cocktail',
         element: <Cocktail/>
