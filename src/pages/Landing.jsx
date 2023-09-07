@@ -16,12 +16,15 @@ return {
 };
 };
   
-export const loader = async ({ request }) => {
+export const loader =
+  (queryClient) =>
+  async ({ request }) => {
     const url = new URL(request.url);
     const searchTerm = url.searchParams.get('search') || '';
+    await queryClient.ensureQueryData(searchCocktailsQuery(searchTerm));
     // const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
     return { searchTerm };
-  };
+};
 
 const Landing = () => {
     const { searchTerm } = useLoaderData();
