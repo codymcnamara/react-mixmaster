@@ -12,7 +12,6 @@ import { loader as landingLoader } from './pages/Landing.jsx';
 import { loader as singleCocktailLoader } from './pages/Cocktail';
 import {action as newsletterAction} from './pages/Newsletter'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
