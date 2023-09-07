@@ -1,8 +1,9 @@
 import { Link, useOutletContext } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/CocktailCard';
 const CocktailCard = ({ image, name, id, info, glass }) => {
-  // const data = useOutletContext();
-  // console.log(data);
+    // global context set up in Home Layout(not needed for this project):   
+    // const data = useOutletContext();
+    // console.log(data);
   return (
     <Wrapper>
       <div className='img-container'>
