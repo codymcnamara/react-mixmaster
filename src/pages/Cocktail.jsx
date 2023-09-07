@@ -1,6 +1,6 @@
 const singleCocktailUrl =
   'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData, Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 import Wrapper from '../assets/wrappers/CocktailPage';
@@ -13,6 +13,8 @@ export const loader = async ({ params }) => {
 
 const Cocktail = () => {
   const { id, data } = useLoaderData();
+
+  if (!data) return <Navigate to='/' />;
 
   const singleDrink = data.drinks[0];
   const {
